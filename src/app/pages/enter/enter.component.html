@@ -1,1 +1,42 @@
-<p>enter works!</p>
+<form class="grid" [formGroup]="enterForm">
+  <div class="flex flex-column gap-2 col-4">
+    <label for="name">{{'name' | translate}}</label>
+    <input
+      pInputText
+      id="name"
+      type="text"
+      formControlName="name" />
+  </div>
+  <div class="flex flex-column gap-2 col-4">
+    <label for="username">{{'username' | translate}}</label>
+    <input
+      pInputText
+      id="username"
+      type="text"
+      formControlName="username" />
+  </div>
+  <div class="flex flex-column gap-2 col-4">
+    <label for="country">{{'country' | translate}}</label>
+    <input
+      pInputText
+      id="country"
+      type="text"
+      formControlName="country" />
+  </div>
+  <div class="flex flex-column gap-2 col-4">
+    <label for="postCode">{{'post-code' | translate}}</label>
+    <input
+      pInputText
+      id="postCode"
+      type="text"
+      formControlName="postCode" />
+  </div>
+  <div class="flex flex-column gap-2 col-4">
+    <label for="favouriteMovie">{{'favourite-movie' | translate}}</label>
+    <input
+      pInputText
+      id="favouriteMovie"
+      type="text"
+      formControlName="favouriteMovie" />
+  </div>
+</form>
