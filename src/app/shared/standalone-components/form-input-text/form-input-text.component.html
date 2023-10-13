@@ -1,0 +1,12 @@
+<div class="flex flex-column gap-2">
+  <label for="{{ id ?? label }}">{{ label }}</label>
+  <input
+    pInputText
+    type="text"
+    id="{{ id ?? label }}"
+    [(ngModel)]="value"
+    (keyup)="hasChanged()"/>
+  <div *ngIf="errors">
+    {{errors | json}}
+  </div>
+</div>

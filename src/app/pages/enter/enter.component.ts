@@ -1,26 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {EnterFormModel} from "../../core/models/enter-form.model";
-import {FormControl, FormGroup} from "@angular/forms";
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-enter',
+  selector: 'roomex-enter',
   templateUrl: './enter.component.html',
   styleUrls: ['./enter.component.css']
 })
-export class EnterComponent implements OnInit {
-  enterForm: FormGroup<EnterFormModel>;
+export class EnterComponent {
 
-  ngOnInit(): void {
-    this.initForm();
-  }
-
-  private initForm(): void {
-    this.enterForm = new FormGroup<EnterFormModel>({
-      name: new FormControl(null),
-      username: new FormControl(null),
-      country: new FormControl(null),
-      postCode: new FormControl(null),
-      favouriteMovie: new FormControl(null)
-    });
-  }
 }
