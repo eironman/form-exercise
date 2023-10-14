@@ -1,0 +1,6 @@
+<ng-container *ngIf="errorKeys.length > 0">
+  <small *ngFor="let errorKey of errorKeys"
+         [ngStyle]="{color:'var(--red-500)'}">
+    {{ 'form-validation.' + errorKey | translate }}
+  </small>
+</ng-container>

@@ -1,0 +1,16 @@
+<div class="flex flex-column gap-2">
+  <label for="{{ id ?? label }}">{{ label }}</label>
+  <p-dropdown
+    id="{{ id ?? label }}"
+    styleClass="w100"
+    placeholder="&nbsp;"
+    [filter]="true"
+    [showClear]="true"
+    [options]="options"
+    [(ngModel)]="value"
+    (onChange)="hasChanged()">
+  </p-dropdown>
+  <roomex-form-error-display
+    [errors]="errors">
+  </roomex-form-error-display>
+</div>

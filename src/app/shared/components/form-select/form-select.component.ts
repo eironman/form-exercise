@@ -1,27 +1,33 @@
 import {Component, Input} from '@angular/core';
-import {InputTextModule} from "primeng/inputtext";
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, ValidationErrors} from "@angular/forms";
-import {JsonPipe, NgIf} from "@angular/common";
+import {DropdownModule} from "primeng/dropdown";
+import {FormErrorDisplayComponent} from "../form-error-display/form-error-display.component";
 
 @Component({
   standalone: true,
-  selector: 'roomex-form-input-text',
-  templateUrl: './form-input-text.component.html',
-  styleUrls: ['./form-input-text.component.css'],
-  imports: [InputTextModule, FormsModule, NgIf, JsonPipe],
+  selector: 'roomex-form-select',
+  templateUrl: './form-select.component.html',
+  styleUrls: ['./form-select.component.css'],
+  imports: [DropdownModule, FormsModule, FormErrorDisplayComponent],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: FormInputTextComponent,
+      useExisting: FormSelectComponent,
       multi: true
     }
   ]
 })
-export class FormInputTextComponent implements ControlValueAccessor {
-  value: string;
+export class FormSelectComponent implements ControlValueAccessor {
+  value: any | null = null;
+  options = [
+    {
+      value: 'id',
+      label: 'España'
+    }
+  ];
 
-  @Input() id: string;
-  @Input() label: string;
+  @Input() id: string | undefined;
+  @Input() label: string | undefined;
   @Input() errors: ValidationErrors | null | undefined;
 
   onChange: any = () => { };

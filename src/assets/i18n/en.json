@@ -1,8 +1,14 @@
 {
   "country": "Country",
   "favourite-movie": "Favourite Movie",
+  "form-validation": {
+    "email": "Field is not a valid email",
+    "required": "Field is required",
+    "no-digits": "Numbers are not allowed"
+  },
   "name": "Name",
   "post-code": "Post Code",
+  "select": "Select",
   "submit": "Submit",
   "username": "Username"
 }

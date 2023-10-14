@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {EnterFormModel} from "../../../../core/models/enter-form.model";
 import {FormValidatorService} from "../../../../core/services/form-validator.service";
+import {noDigitsValidator} from "../../../../core/form-validations/no-digits-validator";
 
 @Component({
   selector: 'roomex-enter-form',
@@ -28,15 +29,16 @@ export class EnterFormComponent implements OnInit {
       favouriteMovie: new FormControl(null)
     });
     this.formValidators = {
-      name: [Validators.required],
-      username: [Validators.email]
+      name: [Validators.required, noDigitsValidator()],
+      username: [Validators.email],
+      country: [Validators.required],
     };
   }
 
   onSubmit(): void {
-    this.formValidatorService.validate(this.enterForm, this.formValidators);
+    this.formValidatorService.setValidators(this.enterForm, this.formValidators);
     if (this.enterForm.valid) {
-      console.log('valid');
+      console.log(this.enterForm.value);
     }
   }
 }

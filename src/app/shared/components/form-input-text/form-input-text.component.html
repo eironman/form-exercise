@@ -6,7 +6,7 @@
     id="{{ id ?? label }}"
     [(ngModel)]="value"
     (keyup)="hasChanged()"/>
-  <div *ngIf="errors">
-    {{errors | json}}
-  </div>
+  <roomex-form-error-display
+    [errors]="errors">
+  </roomex-form-error-display>
 </div>
