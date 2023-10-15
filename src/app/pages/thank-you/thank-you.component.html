@@ -1,1 +1,35 @@
-{{ enterForm | json }}
+<div class="flex justify-content-center mt-4">
+  <p-card header="{{'roomex-form' | translate}}">
+    <div class="grid">
+      <div class="col-6">
+        <p class="font-bold">{{'name' | translate}}</p>
+        <span class="font-italic">{{enterForm.name ?? '-'}}</span>
+      </div>
+      <div class="col-6">
+        <p class="font-bold">{{'username' | translate}}</p>
+        <span class="font-italic">{{enterForm.username ?? '-'}}</span>
+      </div>
+      <div class="col-6">
+        <p class="font-bold">{{'country' | translate}}</p>
+        <span class="font-italic">{{enterForm.country ?? '-'}}</span>
+      </div>
+      <div class="col-6">
+        <p class="font-bold">{{'post-code' | translate}}</p>
+        <span class="font-italic">{{enterForm.postCode ?? '-'}}</span>
+      </div>
+      <div class="col-6">
+        <p class="font-bold">{{'favourite-movie' | translate}}</p>
+        <span class="font-italic">{{enterForm.favouriteMovie ?? '-'}}</span>
+      </div>
+      <div class="col-12">
+        <button
+          pButton
+          icon="pi pi-arrow-left"
+          class="w-full text-center"
+          label="{{'return' | translate}}"
+          routerLink="/enter">
+        </button>
+      </div>
+    </div>
+  </p-card>
+</div>

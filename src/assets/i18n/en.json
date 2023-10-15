@@ -10,6 +10,8 @@
   },
   "name": "Name",
   "post-code": "Post Code",
+  "return": "Return",
+  "roomex-form": "Roomex form",
   "select": "Select",
   "submit": "Submit",
   "username": "Username"

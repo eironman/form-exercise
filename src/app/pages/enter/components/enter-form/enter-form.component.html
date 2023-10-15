@@ -1,19 +1,19 @@
 <form class="grid" [formGroup]="enterForm" (ngSubmit)="onSubmit()">
-  <div class="col-4">
+  <div class="col-6">
     <roomex-form-input-text
       formControlName="name"
       [label]="'name' | translate"
       [errors]="enterForm.get('name')?.errors">
     </roomex-form-input-text>
   </div>
-  <div class="col-4">
+  <div class="col-6">
     <roomex-form-input-text
       formControlName="username"
       [label]="'username' | translate"
       [errors]="enterForm.get('username')?.errors">
     </roomex-form-input-text>
   </div>
-  <div class="col-4">
+  <div class="col-6">
     <roomex-form-select
       formControlName="country"
       [options]="countryOptions"
@@ -21,7 +21,7 @@
       [errors]="enterForm.get('country')?.errors">
     </roomex-form-select>
   </div>
-  <div class="col-4">
+  <div class="col-6">
     <roomex-form-input-text
       formControlName="postCode"
       [id]="'postCode'"
@@ -29,18 +29,18 @@
       [errors]="enterForm.errors?.['postCode']">
     </roomex-form-input-text>
   </div>
-  <div class="col-4">
+  <div class="col-6">
     <roomex-form-input-text
       formControlName="favouriteMovie"
       [id]="'favouriteMovie'"
       [label]="'favourite-movie' | translate">
     </roomex-form-input-text>
   </div>
-  <div class="field col-4">
+  <div class="field col-12">
     <button
       pButton
       icon="pi pi-save"
-      class="mt-4 w-full text-center"
+      class="w-full text-center"
       label="{{'submit' | translate}}">
     </button>
   </div>

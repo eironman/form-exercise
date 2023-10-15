@@ -8,6 +8,7 @@ import {FormSelectComponent} from "../../shared/components/form-select/form-sele
 import {TranslateModule} from "@ngx-translate/core";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
+import {CardModule} from "primeng/card";
 
 describe('EnterComponent', () => {
   let component: EnterComponent;
@@ -25,7 +26,8 @@ describe('EnterComponent', () => {
         ReactiveFormsModule,
         FormInputTextComponent,
         FormSelectComponent,
-        ButtonModule
+        ButtonModule,
+        CardModule
       ]
     });
     fixture = TestBed.createComponent(EnterComponent);

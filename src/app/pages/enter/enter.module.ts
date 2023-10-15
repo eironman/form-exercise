@@ -9,6 +9,7 @@ import {FormInputTextComponent} from "../../shared/components/form-input-text/fo
 import {FormSelectComponent} from "../../shared/components/form-select/form-select.component";
 import {Store, StoreModule} from "@ngrx/store";
 import {enterReducer, enterReducerKey} from "../../state/reducers/enter.reducer";
+import {CardModule} from "primeng/card";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {enterReducer, enterReducerKey} from "../../state/reducers/enter.reducer"
     ReactiveFormsModule,
     ButtonModule,
     FormInputTextComponent,
-    FormSelectComponent
+    FormSelectComponent,
+    CardModule
   ]
 })
 export class EnterModule { }

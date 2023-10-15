@@ -1,5 +1,8 @@
 @import "primeicons/primeicons.css";
 
+.p-card-content {
+  width: 500px;
+}
 .w100 {
   width: 100% !important;
 }
