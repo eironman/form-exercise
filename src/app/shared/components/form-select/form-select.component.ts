@@ -2,6 +2,7 @@ import {Component, Input} from '@angular/core';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR, ValidationErrors} from "@angular/forms";
 import {DropdownModule} from "primeng/dropdown";
 import {FormErrorDisplayComponent} from "../form-error-display/form-error-display.component";
+import {SelectOptionModel} from "../../../core/models/select-option.model";
 
 @Component({
   standalone: true,
@@ -19,15 +20,10 @@ import {FormErrorDisplayComponent} from "../form-error-display/form-error-displa
 })
 export class FormSelectComponent implements ControlValueAccessor {
   value: any | null = null;
-  options = [
-    {
-      value: 'id',
-      label: 'España'
-    }
-  ];
 
   @Input() id: string | undefined;
   @Input() label: string | undefined;
+  @Input() options: SelectOptionModel[];
   @Input() errors: ValidationErrors | null | undefined;
 
   onChange: any = () => { };

@@ -1,8 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {EnterFormModel} from "../../../../core/models/enter-form.model";
 import {FormValidatorService} from "../../../../core/services/form-validator.service";
-import {noDigitsValidator} from "../../../../core/form-validations/no-digits-validator";
+import {noDigitsValidator} from "../../../../core/validators/controls/no-digits-validator";
+import {countriesAsSelectOptions} from "../../../../core/enums/countries.enum";
+import {SelectOptionModel} from "../../../../core/models/select-option.model";
+import {postCodeValidator} from "../../../../core/validators/form/post-code-validator";
+import {FormValidatorsModel} from "../../../../core/models/form-validators.model";
 
 @Component({
   selector: 'roomex-enter-form',
@@ -12,7 +16,8 @@ import {noDigitsValidator} from "../../../../core/form-validations/no-digits-val
 })
 export class EnterFormComponent implements OnInit {
   enterForm: FormGroup<EnterFormModel>;
-  formValidators: { [key: string]: ValidatorFn[] };
+  countryOptions: SelectOptionModel[] = countriesAsSelectOptions();
+  private formValidators: FormValidatorsModel;
 
   constructor(private formValidatorService: FormValidatorService) {}
 
@@ -29,9 +34,12 @@ export class EnterFormComponent implements OnInit {
       favouriteMovie: new FormControl(null)
     });
     this.formValidators = {
-      name: [Validators.required, noDigitsValidator()],
-      username: [Validators.email],
-      country: [Validators.required],
+      controls: {
+        name: [Validators.required, noDigitsValidator()],
+        username: [Validators.email],
+        country: [Validators.required],
+      },
+      form: [postCodeValidator()],
     };
   }
 

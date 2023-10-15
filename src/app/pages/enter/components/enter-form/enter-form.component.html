@@ -16,6 +16,7 @@
   <div class="col-4">
     <roomex-form-select
       formControlName="country"
+      [options]="countryOptions"
       [label]="'country' | translate"
       [errors]="enterForm.get('country')?.errors">
     </roomex-form-select>
@@ -25,7 +26,7 @@
       formControlName="postCode"
       [id]="'postCode'"
       [label]="'post-code' | translate"
-      [errors]="enterForm.get('postCode')?.errors">
+      [errors]="enterForm.errors?.['postCode']">
     </roomex-form-input-text>
   </div>
   <div class="col-4">

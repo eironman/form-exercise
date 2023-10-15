@@ -1,9 +1,9 @@
 <div class="flex flex-column gap-2">
   <label for="{{ id ?? label }}">{{ label }}</label>
   <p-dropdown
-    id="{{ id ?? label }}"
-    styleClass="w100"
-    placeholder="&nbsp;"
+    [id]="id ?? label"
+    [styleClass]="'w100'"
+    [placeholder]="'&nbsp;'"
     [filter]="true"
     [showClear]="true"
     [options]="options"

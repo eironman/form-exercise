@@ -1,6 +1,5 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {FormsModule, ValidationErrors} from "@angular/forms";
-import {InputTextModule} from "primeng/inputtext";
+import {Component, Input, OnChanges} from '@angular/core';
+import {ValidationErrors} from "@angular/forms";
 import {SharedModule} from "../../modules/shared.module";
 
 @Component({
