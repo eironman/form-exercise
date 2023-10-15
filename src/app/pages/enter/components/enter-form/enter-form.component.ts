@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {EnterFormModel} from "../../../../core/models/enter-form.model";
 import {FormValidatorService} from "../../../../core/services/form-validator.service";
@@ -7,6 +7,7 @@ import {countriesAsSelectOptions} from "../../../../core/enums/countries.enum";
 import {SelectOptionModel} from "../../../../core/models/select-option.model";
 import {postCodeValidator} from "../../../../core/validators/form/post-code-validator";
 import {FormValidatorsModel} from "../../../../core/models/form-validators.model";
+import {EnterFormRawModel} from "../../../../core/models/enter-form-raw.model";
 
 @Component({
   selector: 'roomex-enter-form',
@@ -18,6 +19,8 @@ export class EnterFormComponent implements OnInit {
   enterForm: FormGroup<EnterFormModel>;
   countryOptions: SelectOptionModel[] = countriesAsSelectOptions();
   private formValidators: FormValidatorsModel;
+
+  @Output() enterFormEmitter = new EventEmitter<EnterFormRawModel>();
 
   constructor(private formValidatorService: FormValidatorService) {}
 
@@ -46,7 +49,7 @@ export class EnterFormComponent implements OnInit {
   onSubmit(): void {
     this.formValidatorService.setValidators(this.enterForm, this.formValidators);
     if (this.enterForm.valid) {
-      console.log(this.enterForm.value);
+      this.enterFormEmitter.emit(this.enterForm.getRawValue());
     }
   }
 }

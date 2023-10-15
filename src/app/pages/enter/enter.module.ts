@@ -7,6 +7,8 @@ import {EnterFormComponent} from './components/enter-form/enter-form.component';
 import {ButtonModule} from "primeng/button";
 import {FormInputTextComponent} from "../../shared/components/form-input-text/form-input-text.component";
 import {FormSelectComponent} from "../../shared/components/form-select/form-select.component";
+import {Store, StoreModule} from "@ngrx/store";
+import {enterReducer, enterReducerKey} from "../../state/reducers/enter.reducer";
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import {FormSelectComponent} from "../../shared/components/form-select/form-sele
   ],
   imports: [
     SharedModule,
+    StoreModule.forFeature(enterReducerKey, enterReducer),
     EnterRoutingModule,
     ReactiveFormsModule,
     ButtonModule,
