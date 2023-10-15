@@ -8,7 +8,7 @@ describe('FormInputTextComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [FormInputTextComponent]
+      imports: [FormInputTextComponent]
     });
     fixture = TestBed.createComponent(FormInputTextComponent);
     component = fixture.componentInstance;

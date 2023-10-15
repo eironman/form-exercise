@@ -10,7 +10,7 @@ import {SharedModule} from "../../modules/shared.module";
   imports: [SharedModule],
 })
 export class FormErrorDisplayComponent implements OnChanges {
-  errorKeys: string[];
+  errorKeys: string[] = [];
 
   @Input() errors: ValidationErrors | null | undefined;
 

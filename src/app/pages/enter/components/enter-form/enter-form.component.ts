@@ -18,7 +18,7 @@ import {EnterFormRawModel} from "../../../../core/models/enter-form-raw.model";
 export class EnterFormComponent implements OnInit {
   enterForm: FormGroup<EnterFormModel>;
   countryOptions: SelectOptionModel[] = countriesAsSelectOptions();
-  private formValidators: FormValidatorsModel;
+  formValidators: FormValidatorsModel;
 
   @Output() enterFormEmitter = new EventEmitter<EnterFormRawModel>();
 
