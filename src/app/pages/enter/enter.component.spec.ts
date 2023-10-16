@@ -9,6 +9,8 @@ import {TranslateModule} from "@ngx-translate/core";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
+import {FormMovieComponent} from "../../shared/components/form-movie/form-movie.component";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('EnterComponent', () => {
   let component: EnterComponent;
@@ -23,9 +25,11 @@ describe('EnterComponent', () => {
       imports: [
         StoreModule.forRoot({}),
         TranslateModule.forRoot(),
+        HttpClientModule,
         ReactiveFormsModule,
         FormInputTextComponent,
         FormSelectComponent,
+        FormMovieComponent,
         ButtonModule,
         CardModule
       ]

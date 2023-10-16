@@ -6,6 +6,8 @@ import {ButtonModule} from "primeng/button";
 import {TranslateModule} from "@ngx-translate/core";
 import {ReactiveFormsModule} from "@angular/forms";
 import {FormValidatorService} from "../../../../core/services/form-validator.service";
+import {FormMovieComponent} from "../../../../shared/components/form-movie/form-movie.component";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('EnterFormComponent', () => {
   let component: EnterFormComponent;
@@ -17,8 +19,10 @@ describe('EnterFormComponent', () => {
       imports: [
         TranslateModule.forRoot(),
         ReactiveFormsModule,
+        HttpClientModule,
         FormInputTextComponent,
         FormSelectComponent,
+        FormMovieComponent,
         ButtonModule
       ],
       providers: [FormValidatorService]

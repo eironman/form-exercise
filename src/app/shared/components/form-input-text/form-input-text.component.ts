@@ -24,14 +24,15 @@ export class FormInputTextComponent implements ControlValueAccessor {
   @Input() label: string | null;
   @Input() errors: ValidationErrors | null | undefined;
 
-  onChange: any = () => { };
-  onTouched: any = () => { };
-
   constructor() { }
 
   hasChanged(): void {
     this.onChange(this.value);
   }
+
+  // ControlValueAccessor interface
+  onChange: any = () => { };
+  onTouched: any = () => { };
 
   registerOnChange(fn: any): void {
     this.onChange = fn;

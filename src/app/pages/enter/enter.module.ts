@@ -7,9 +7,10 @@ import {EnterFormComponent} from './components/enter-form/enter-form.component';
 import {ButtonModule} from "primeng/button";
 import {FormInputTextComponent} from "../../shared/components/form-input-text/form-input-text.component";
 import {FormSelectComponent} from "../../shared/components/form-select/form-select.component";
-import {Store, StoreModule} from "@ngrx/store";
+import {StoreModule} from "@ngrx/store";
 import {enterReducer, enterReducerKey} from "../../state/reducers/enter.reducer";
 import {CardModule} from "primeng/card";
+import {FormMovieComponent} from "../../shared/components/form-movie/form-movie.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import {CardModule} from "primeng/card";
     ButtonModule,
     FormInputTextComponent,
     FormSelectComponent,
+    FormMovieComponent,
     CardModule
   ]
 })
