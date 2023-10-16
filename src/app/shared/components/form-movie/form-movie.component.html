@@ -3,8 +3,10 @@
   <p-autoComplete
     id="{{ id ?? label }}"
     field="title"
-    [(ngModel)]="value"
+    [styleClass]="'w100'"
+    [inputStyleClass]="'w100'"
     [suggestions]="moviesSuggested"
+    [(ngModel)]="value"
     (keyup)="hasChanged()"
     (completeMethod)="suggestMovies($event)">
 
