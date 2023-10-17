@@ -2,7 +2,6 @@ import {Component, Input} from '@angular/core';
 import {ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR} from "@angular/forms";
 import {AutoCompleteCompleteEvent, AutoCompleteModule} from "primeng/autocomplete";
 import {MoviesApi} from "../../../core/services/api/movies.api";
-import {Subscription} from "rxjs";
 import {MovieModel} from "../../../core/models/movie.model";
 import {SharedModule} from "../../modules/shared.module";
 import {OmdbMovieToMovieConverter} from "../../../core/services/converters/omdbMovieToMovie.converter";
@@ -27,7 +26,6 @@ export class FormMovieComponent implements ControlValueAccessor {
   value: string;
   moviesSuggested: MovieModel[];
   errorMessage: string | undefined;
-  private moviesRequest: Subscription;
 
   @Input() id: string | null;
   @Input() label: string | null;
@@ -35,17 +33,10 @@ export class FormMovieComponent implements ControlValueAccessor {
   constructor(private moviesApi: MoviesApi) { }
 
   suggestMovies(event: AutoCompleteCompleteEvent): void {
-    this.cancelPreviousRequest();
-    this.moviesRequest = this.moviesApi.getMovies(event.query)
+    this.moviesApi.getMovies(event.query)
       .subscribe({
         next: moviesResponse => this.onMoviesReceived(moviesResponse),
         error: error => this.onMoviesReceivedError(error)});
-  }
-
-  private cancelPreviousRequest(): void {
-    if (this.moviesRequest && !this.moviesRequest.closed) {
-      this.moviesRequest.unsubscribe();
-    }
   }
 
   private onMoviesReceived(moviesResponse: MovieModel[]): void {
